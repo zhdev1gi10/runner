@@ -12,6 +12,8 @@
         <module>runner-core</module>
         <module>runnerapi</module>
         <module>runner-api</module>
+        <module>runner-admin</module>
+        <module>runner-web</module>
     </modules>
     <!--pom只是去做项目管理-->
     <packaging>pom</packaging>
