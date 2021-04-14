@@ -11,6 +11,7 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/runner-web/pom.xml" />
         <option value="$PROJECT_DIR$/runnerapi/pom.xml" />
       </set>
     </option>

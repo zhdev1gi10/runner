@@ -10,7 +10,6 @@
     <!--表示项目的子模块-->
     <modules>
         <module>runner-core</module>
-        <module>runnerapi</module>
         <module>runner-api</module>
         <module>runner-admin</module>
         <module>runner-web</module>
@@ -32,7 +31,6 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
     </properties>
-
 
 
 </project>
