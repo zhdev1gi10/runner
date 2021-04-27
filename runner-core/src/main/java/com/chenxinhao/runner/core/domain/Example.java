@@ -2,20 +2,17 @@ package com.chenxinhao.runner.core.domain;
 
 import javax.persistence.*;
 
-/**
- * 示例实体类
- */
 @Entity
 @Table(name = "at_example")
 public class Example {
     @Id
     @GeneratedValue
-    private Long id;      //主键ID，自增长
+    private Long id;//主键ID，自增长
 
     @Column(length = 50)
-    private String title;   //中文标题
+    private String title;//中文标题
 
-    private String remark;   //备注
+    private String remark;//备注
 
     public Long getId() {
         return id;

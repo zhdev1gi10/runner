@@ -4,36 +4,60 @@ import com.chenxinhao.runner.core.domain.Customer;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-
 public interface CustomerService {
+
     /**
-     * 注册
+     * 顾客注册
+     * @param customer
+     * @return
      */
     public Customer register(Customer customer);
-    /**
-     * 登陆
-     */
-    public Boolean login(String name, String password);
 
     /**
-     * 顾客列表
+     * 顾客登录
+     * @param username
+     * @param password
+     * @return
      */
+    public Customer login(String username, String password);
+
+    /**
+     * 顾客列表（分页）
+     * @param pageable
+     * @return
+     */
+
     public Page<Customer> list(Pageable pageable);
 
     /**
-     * 顾客详情
+     * 通过顾客ID获取顾客信息
+     * @param id
+     * @return
      */
-    public Customer detail(Long id);
+    public Customer get(Long id);
 
     /**
      * 修改顾客
+     * @param customer
+     * @return
      */
     public Customer update(Customer customer);
 
     /**
-     * 确认配送资格
+     * 申请配送资格
+     * @param id
+     * @return
      */
-    public Customer uptype(Integer type);
+    public Customer applyToDistributor(Long id);
 
+    /**
+     * 确认配送资格
+     * @param id
+     * @param status(2:通过，9：不通过)
+     * @return
+     */
+    public Boolean confirmToDistributor(Long id, Integer status) throws Exception;
+
+//    注册、登录、顾客列表（分页）、顾客详情、修改顾客，申请配送资格，确认配送资格
 
 }

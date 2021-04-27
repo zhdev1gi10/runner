@@ -1,23 +1,18 @@
 package com.chenxinhao.runner.core.domain;
 
-import lombok.Data;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
- * 管理员实体类
- *
-
+ * 系统管理员实体类
  */
 @Entity
+@Table(name = "at_manager")
 public class Manager {
+
     @Id
     @GeneratedValue
     private Long id;
-    @Column(length = 50)
+    @Column(length = 50, unique = true)
     private String username;
 
     @Column(length = 50)
@@ -46,14 +41,6 @@ public class Manager {
         this.username = username;
     }
 
-    public String getNickname() {
-        return nickname;
-    }
-
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
-    }
-
     public String getPassword() {
         return password;
     }
@@ -76,5 +63,13 @@ public class Manager {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 }

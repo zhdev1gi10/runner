@@ -2,8 +2,6 @@ package com.chenxinhao.runner.api.controller;
 
 import com.chenxinhao.runner.api.utils.ResultGenerator;
 import com.chenxinhao.runner.api.vo.Result;
-import com.chenxinhao.runner.core.domain.Example;
-import com.chenxinhao.runner.core.service.ExampleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
