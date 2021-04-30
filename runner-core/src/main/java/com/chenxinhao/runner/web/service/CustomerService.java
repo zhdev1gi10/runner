@@ -1,17 +1,26 @@
-package com.chenxinhao.runner.core.service;
+package com.chenxinhao.runner.web.service;
 
-import com.chenxinhao.runner.core.domain.Customer;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-public interface CustomerService {
+import com.chenxinhao.runner.web.domain.Customer;
 
+/**
+ * 顾客服务类
+ *
+ * @author 陈鑫豪
+ * @Time 2018/6/5
+ */
+public interface CustomerService {
     /**
-     * 顾客注册
-     * @param customer
-     * @return
+     * 注册
      */
     public Customer register(Customer customer);
+    /**
+     * 登陆
+     */
+    public Boolean login1(String name, String password);
 
     /**
      * 顾客登录
@@ -20,26 +29,18 @@ public interface CustomerService {
      * @return
      */
     public Customer login(String username, String password);
-
     /**
-     * 顾客列表（分页）
-     * @param pageable
-     * @return
+     * 顾客列表(分页)
      */
-
     public Page<Customer> list(Pageable pageable);
 
     /**
-     * 通过顾客ID获取顾客信息
-     * @param id
-     * @return
+     * 顾客详情
      */
-    public Customer get(Long id);
+    public Customer detail(Long id);
 
     /**
      * 修改顾客
-     * @param customer
-     * @return
      */
     public Customer update(Customer customer);
 
@@ -53,11 +54,10 @@ public interface CustomerService {
     /**
      * 确认配送资格
      * @param id
-     * @param status(2:通过，9：不通过)
+     * @param applyStatus(2:通过，9：不通过)
      * @return
      */
-    public Boolean confirmToDistributor(Long id, Integer status) throws Exception;
+    public Boolean  confirmToDistributor(Long id, Integer applyStatus)throws Exception;
 
-//    注册、登录、顾客列表（分页）、顾客详情、修改顾客，申请配送资格，确认配送资格
 
 }
